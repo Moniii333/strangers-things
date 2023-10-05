@@ -19,7 +19,7 @@ export default function LogOut() {
       {savedUsername ? (
         <span>
         <p>Sure you want to log out?</p>
-        <button onClick={loggingOut}>Logout</button>
+        <button onClick={loggingOut} id="logout-btn">Logout</button>
       </span>
       ) : (
         <>

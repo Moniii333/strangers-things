@@ -4,8 +4,6 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { authLogin } from '../API'
 
-// 2 fake accts user123 pwd=un & HackerX pwd = Code4Fun
-
 function Login({ passedToken, passedUsername, onlineStatus }) {
   const [newUsername, setNewUsername] = useState('')
   const [pwd, setPwd] = useState('')
@@ -35,10 +33,10 @@ function Login({ passedToken, passedUsername, onlineStatus }) {
         sessionStorage.setItem('username', newUsername)
         toast.success('login successful')
         console.log('whats in storage',sessionStorage)
-        
+        toast.info('Please wait while we load your profile!')
         {setTimeout(() => {
           navigation('/profile')
-        }, 1500)}
+        }, 1800)}
 
       } else {
         toast.error('User login failed!')
@@ -66,7 +64,7 @@ function Login({ passedToken, passedUsername, onlineStatus }) {
         setPwd(e.target.value)
       }} />
           </label>
-          <button type='submit' onClick={handleLogin}>Login</button>
+          <button id='login-btn' type='submit' onClick={handleLogin}>Login</button>
         </form> 
         {onlineStatus === true && updatedUsername ? (
           <>

@@ -69,7 +69,7 @@ export default function CreatePost({ onlineStatus }) {
             <input value={willDeliver} onChange={(e) => setWillDeliver(e.target.checked)} id="deliver" type="checkbox" />
           </label>
           <br></br>
-          <button>Create Post</button>
+          <button id='create-btn'>Create Post</button>
         </form>
       </span>
     </div>

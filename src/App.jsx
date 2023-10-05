@@ -9,13 +9,9 @@ import SignUp from './components/SignUp'
 import Posts from './components/Posts'
 import LogOut from './components/LogOut'
 import CreatePost from './components/CreatePost'
-import Messages from './components/Messages';
 import { fetchPosts } from './API';
 import Searchbar from './components/SearchBar';
 import EditPosts from './components/EditPosts';
-import ReactSwitch from 'react-switch'
-
-export const ThemeContext = React.createContext(null)
 
 function App() {
   const [token, setToken] = useState('')
@@ -55,24 +51,10 @@ function App() {
   const updateUsername = (newUsername) => {
     setNewUsername(newUsername)
   }
-
-  // dark/light mode
-  const [theme, setTheme] = useState('dark')
-
-  const toggleTheme = () => {
-    setTheme((curr) => (curr === 'light' ? 'dark' : 'light'))
-  }
  
-
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
-    <div className='main' id={theme}>
     <Router>
        <Nav />
-       <div className='theme-toggle'>
-        <label>{theme === 'light' ? 'Light Mode' : 'Dark Mode'}</label>
-        <ReactSwitch onChange={toggleTheme} checked={theme === 'dark'}/>
-       </div>
        <ToastContainer pauseOnFocusLoss={false}
  position="bottom-center" autoClose={3000} hideProgressBar={false} newestOnTop={false} closeOnClickrtl={false} theme='dark' />
       <Routes>
@@ -83,13 +65,10 @@ function App() {
         <Route path='/posts' element={<Posts  />} />
         <Route path='/logout' element={<LogOut />} />
         <Route path='/createpost' element={<CreatePost passedToken={tokenExchange}/>} />
-        <Route path='/messages' element={<Messages postResults={savedPosts}/>} />
         <Route path='/searchbar' element={<Searchbar  />} />
         <Route path='/editposts/:postId' exact element={<EditPosts />} />
       </Routes>
     </Router>
-  </div>
-  </ThemeContext.Provider>
   )
 }
 

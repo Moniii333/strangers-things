@@ -1,16 +1,19 @@
 /*REMINDER TO CLEAN UP CSS FROM UNUSED IDS, CLASSNAMES  */
 #root {
-  /* max-width: 1280px; */
-  margin: 0 auto;
-  /* padding: 2rem; */
+  width: 650px;
+  margin: 5rem auto;
   text-align: center;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: rgba(93, 105, 156, 0.71);
+
+}
+body{
+  background-color: #414040;
 }
 
-.main {
-  width: 50vh;
+button{
+  max-width: 6rem;
 }
-
 button, [type='checkbox'] {
   cursor: pointer!important;
   padding: 6px;
@@ -32,6 +35,18 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
+/* logout */
+#logout-btn {
+  border-radius: 12px;
+  border-color: darkmagenta;
+  background-color: azure;
+  margin: 15px;
+  font-size: 16px;
+}
+#logout-btn:hover {
+  background-color: fuchsia;
+  color: azure;
+}
 
 /* login page */
 .login-div {
@@ -44,6 +59,14 @@ body {
 
 .login-div > input {
   margin-bottom: 10px;
+}
+#login-btn {
+  margin: auto;
+  border-radius: 8px;
+}
+#light, #login-btn {
+  border-color: deepskyblue;
+  
 }
 
 /* sign up */
@@ -107,6 +130,17 @@ a {
   height: 30rem;
   align-items: center;
   box-shadow: 8px 2px 15px lightskyblue;
+  background-color: rgba(220, 241, 246, 0.818);
+}
+#create-btn {
+  border-color: dodgerblue;
+  border-radius: 12px;
+  background-color: aliceblue;
+  padding: 5px;
+}
+#create-btn:hover {
+  background-color: dodgerblue;
+  color: azure;
 }
 
 /* existing posts */
@@ -122,6 +156,9 @@ a {
   background-position-x: 40%;
   background-repeat: no-repeat;
   transition: background-size 0.2s ease-in-out;
+  left: 5rem;
+  margin-bottom: 1rem;
+  min-width: 4rem;
 }
 #loggedInUser:hover, #loggedInUser:active, #loggedInUser:focus{
   background-size: 100% 0.1em;
@@ -133,10 +170,12 @@ a {
 }
 
 .remove-post {
-  background-color: crimson;
+  background-color: rgba(218, 63, 63, 0.163);
+  border-color: crimson;
   border-radius: 8px;
   margin: 5px;
   max-width: 6rem;
+  padding: 5px;
 }
 .message-btn {
   border-color: aqua;
@@ -155,11 +194,18 @@ a {
 }
 
 .edit-btn {
-  background-color: deepskyblue;
+  background-color: rgba(0, 255, 140, 0.24);
+  border-color: lawngreen;
   border-radius: 8px;
   color: black;
   max-width: 6rem;
   left: 100rem;
+  padding: 5px;
+}
+#cancel-editbtn {
+  border-color: darkorange;
+  background-color: rgba(255, 166, 0, 0.462);
+  border-radius: 8px;
 }
 
 .post-div {
@@ -167,7 +213,7 @@ a {
   background-color: rgb(216, 217, 251);
   padding: 10px;
   color: #242424;
-  margin: 1.5rem 0;
+  margin-right: 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -227,6 +273,8 @@ a {
   border: 2px solid azure;
   background-color: beige;
   color: #242424;
+  margin-left: 3rem;
+  width: 30rem;
 }
 
 .inactive-post {
@@ -248,6 +296,13 @@ a {
   height: 50vh;
   width: 45vh;
   font-size: 20px;
+  box-shadow: 3px 4px 10px rgba(150, 100, 300, 0.7);
+  background-color: #b4b8f382;
+}
+#update-btn {
+  border-color: blueviolet;
+  border-radius: 10px;
+  background-color: rgba(209, 117, 255, 0.389);
 }
 
 /* sending message */
@@ -286,30 +341,4 @@ a {
   color: darkturquoise;
   font-size: 15px;
   
-}
-/* !important note to self use theme id to customize containers to get rid of using root might help with light mode color working properly */
-/* light mode/dark mode */
-#dark, #light {
-  margin-top: 5rem;
-}
-.theme-toggle {
-  margin: 2rem;
-  position: absolute;
-  right: 0;
-  top: 2rem;
-}
-/* #dark{
-  background-color: rgba(1, 0, 0, 0.90);
-} */
-#light, body {
-  background-color: rgba(365, 360, 360, 0.8);
-}
-#dark, body {
-  background-color: #242424 !important;
-}
-#dark, .theme-label {
-  color: azure;
-}
-#light, .theme-label {
-  color: #242424;
 }

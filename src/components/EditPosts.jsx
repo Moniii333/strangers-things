@@ -69,25 +69,25 @@ console.log('form data: ', formData)
         <label>Item name:
           <input name="title" value={formData.title} onChange={handleInputChanges} />
         </label>
-        <br></br>
+        <br></br><br></br>
         <label>Location:
           <input name="location" value={formData.location} onChange={handleInputChanges} />
         </label>
-        <br></br>
+        <br></br><br></br>
         <label>Description:
         <br></br>
           <textarea name="description" value={formData.description} onChange={handleInputChanges} />
         </label>
-        <br></br>
+        <br></br><br></br>
         <label>Price:
           <input name="price" value={formData.price} onChange={handleInputChanges} />
         </label>
-        <br></br>
+        <br></br><br></br>
         <label>Delivery?
           <input name="willDeliver" value={formData.willDeliver} onChange={handleInputChanges} type="checkbox" />
         </label>
-        <br></br>
-        <button type="submit" >Update Post</button>
+        <br></br><br></br>
+        <button id="update-btn" type="submit" >Update Post</button>
       </form>
     </div>
   )

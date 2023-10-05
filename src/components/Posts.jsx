@@ -63,9 +63,6 @@ const [wantSendMessage, setWantSendMessage] = useState(false)
         console.warn('From posts' ,err)
       }
     }
-    useEffect(() => {
-    console.info('---->', message)
-   }, [message])
 
     // searchbar funcs
     const [query, setQuery] = useState('')
@@ -95,7 +92,6 @@ const [wantSendMessage, setWantSendMessage] = useState(false)
 
 
     return (
-      <>
       <>
         <Searchbar query={query} setQuery={setQuery} />
         {username ? (
@@ -149,7 +145,7 @@ const [wantSendMessage, setWantSendMessage] = useState(false)
                     {editPost === true && post.author.username === username ? (
                       <>
                         <Link to={`/editposts/${post._id}`} state={{ post }} onClick={() => console.log(`Post ID: ${post._id}`)}>Edit your post here</Link>
-                        <button type="button" onClick={() => setEditPost(false)}>Cancel Edit</button>
+                        <button id="cancel-editbtn" type="button" onClick={() => setEditPost(false)}>Cancel Edit</button>
                       </>
                     ) : (
                       null
@@ -197,7 +193,7 @@ const [wantSendMessage, setWantSendMessage] = useState(false)
                   {editPost === true && post.author.username === username ? (
                     <>
                       <Link to={`/editposts/${post._id}`} state={{ post }} onClick={() => console.log(`Post ID: ${post._id}`)}>Edit your post here</Link>
-                      <button type="button" onClick={() => setEditPost(false)}>Cancel Edit</button>
+                      <button id="cancel-editbtn" type="button" onClick={() => setEditPost(false)}>Cancel Edit</button>
                     </>
                   ) : (
                     null
@@ -207,10 +203,19 @@ const [wantSendMessage, setWantSendMessage] = useState(false)
               )}
           </>
         ) : (
-            <span>
-              <p>Log in to interact with other users!</p>
+            <>
+              <p>^Search through current posts!^</p>
+              <p>or log in to interact with other users!</p>
               <Link to='/login'>Please sign in!</Link>
-              {showPosts.map((post) => (
+              {query && (
+              showPosts.filter((post) => {
+                  return (
+                    post.title.toLowerCase().includes(query.toLowerCase()) ||
+                    post.description.toLowerCase().includes(query.toLowerCase()) ||
+                    post.author.username.toLowerCase().includes(query.toLowerCase())
+                  )
+                })
+                .map((post) => (
                 <div className='not-signedIn' key={post._id}>
                   <p>{post.title}</p>
                   <p><em>Location: </em> {post.location}</p>
@@ -218,10 +223,10 @@ const [wantSendMessage, setWantSendMessage] = useState(false)
                   <p><em>Description:</em> {post.description}</p>
                   <p><em>Price: </em> {post.price}</p>
                 </div>
-              ))}
-            </span>
+              ))
+            )}
+            </>
           )}
-      </>
       </>
     )
 }    
