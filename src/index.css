@@ -1,0 +1,315 @@
+/*REMINDER TO CLEAN UP CSS FROM UNUSED IDS, CLASSNAMES  */
+#root {
+  /* max-width: 1280px; */
+  margin: 0 auto;
+  /* padding: 2rem; */
+  text-align: center;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.main {
+  width: 50vh;
+}
+
+button, [type='checkbox'] {
+  cursor: pointer!important;
+  padding: 6px;
+  box-shadow: 0 3px 7px lightslategray;
+}
+button:hover {
+  cursor: pointer;
+  border-radius: 20px;
+}
+button:active {
+  transform: scale(0.98);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+body {
+  margin: auto;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+/* login page */
+.login-div {
+  display: flex;
+  flex-direction: column;
+}
+#passwordInput, #usernameInput {
+  margin-left: 5px;
+}
+
+.login-div > input {
+  margin-bottom: 10px;
+}
+
+/* sign up */
+#register-form {
+  height: 20rem;
+  width: 20rem;
+  box-shadow: 8px 4px 12px whitesmoke;
+}
+
+#username, #password {
+  width: 10rem;
+  margin-left: 5px;
+}
+
+/* navbar styles */
+.navbar {
+  position: fixed;
+  overflow: hidden;
+  background-color: #4B527E;
+  top: 0;
+  width: 100%;
+  height: 3rem;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 3;
+  
+}
+
+a {
+  text-decoration: none;
+  padding: 10px;
+}
+
+/* create post */
+#item-name, #location, #description, #price, #deliver {
+  margin-bottom: 20px;
+  text-align: center;
+}
+#des-label, #description {
+  display: block; 
+  margin-bottom: -10px;
+}
+#deliver {
+  cursor: pointer;
+  margin-top: 20px;
+}
+#price {
+  margin: auto;
+  width: 50px;
+}
+#form {
+  position: fixed;
+  padding: 20px;
+  top: 15%;
+  display: flex;
+  flex-direction: column;
+  left: 30%;
+  border: 2px solid white;
+  height: 30rem;
+  align-items: center;
+  box-shadow: 8px 2px 15px lightskyblue;
+}
+
+/* existing posts */
+#loggedInUser {
+  font-size: 2.2rem;
+  color: azure;
+  text-shadow: 2px 1px lightskyblue;
+  font-weight: bolder;
+  text-decoration: none;
+  background-image: linear-gradient(to right, rgb(114, 183, 247), rgb(145, 145, 228));
+  background-size: 0% 0.1em;
+  background-position-y: 100%;
+  background-position-x: 40%;
+  background-repeat: no-repeat;
+  transition: background-size 0.2s ease-in-out;
+}
+#loggedInUser:hover, #loggedInUser:active, #loggedInUser:focus{
+  background-size: 100% 0.1em;
+  background-position-x: 0%;
+}
+
+#posts-container{
+  margin-top: 3rem;
+}
+
+.remove-post {
+  background-color: crimson;
+  border-radius: 8px;
+  margin: 5px;
+  max-width: 6rem;
+}
+.message-btn {
+  border-color: aqua;
+  background-color: azure;
+  border-radius: 8px;
+  margin: 5px;
+  color: lightskyblue;
+  font-weight: bolder;
+  max-width: 10rem;
+  height: 2rem;
+  align-self: center;
+}
+.message-btn:hover {
+  border: 2px solid  cyan;
+  border-radius: 20px;
+}
+
+.edit-btn {
+  background-color: deepskyblue;
+  border-radius: 8px;
+  color: black;
+  max-width: 6rem;
+  left: 100rem;
+}
+
+.post-div {
+  border: 1px solid lightcyan;
+  background-color: rgb(216, 217, 251);
+  padding: 10px;
+  color: #242424;
+  margin: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 35rem;
+  box-shadow: 2px 3px 6px whitesmoke;
+}
+
+.description-post {
+  height: 5rem;
+  width: 18rem;
+  font-size: 16px;
+  overflow-wrap: break-word;
+  background-color: rgb(216, 217, 251);
+  border: none;
+  color: #242424;
+  margin: 10px auto;
+  display: block;
+  text-align: center;
+}
+.des-label, .description-post {
+  display: block;
+  text-align: center;
+}
+.des-label {
+  margin: 0;
+}
+
+.location-post {
+  font-size: 19px;
+  font-family: cursive;
+}
+.location-post, .item-post {
+  width: 100%;
+  display: block;
+  margin: 5px auto;
+  background-color: rgb(216, 217, 251);
+  border: none;
+  color: #242424;
+  font-size: 14px;
+  text-align: center;
+}
+.price-post{
+  background-color: rgb(216, 217, 251);
+  border: none;
+  color: #242424;
+  letter-spacing: 2px;
+  font-size: 15px;
+  text-align: center;
+}
+.item-post{
+  font-size: 24px !important;
+  letter-spacing: 2px;
+}
+
+/* profile */
+.profile-posts{
+  border: 2px solid azure;
+  background-color: beige;
+  color: #242424;
+}
+
+.inactive-post {
+  opacity: .67;
+
+}
+
+/* edit post */
+.update-post {
+  display: inline-block;
+}
+.editable {
+  background-color: azure;
+}
+
+#edit-form {
+  text-align: center;
+  border: 2px dotted whitesmoke;
+  height: 50vh;
+  width: 45vh;
+  font-size: 20px;
+}
+
+/* sending message */
+#message-form {
+  border: 2px double azure;
+  padding: 20px;
+  height: 8rem;
+  display: flex;
+  flex-direction: column;
+}
+#send-msg-btn {
+  margin: 5px;
+  background-color: azure;
+  color: black;
+  border: 2px solid cyan;
+  border-radius: 20px;
+}
+#cancel-msg-btn {
+  background-color: azure;
+  color: black;
+  border: 2px solid orange;
+  border-radius: 20px;
+}
+
+/* styles for not signed in on posts comp */
+.not-signedIn {
+  border: 2px double rgb(237, 233, 228);
+}
+
+/* searchbar */
+#searchbar {
+  display: block;
+  border: none;
+}
+#search-btn {
+  color: darkturquoise;
+  font-size: 15px;
+  
+}
+/* !important note to self use theme id to customize containers to get rid of using root might help with light mode color working properly */
+/* light mode/dark mode */
+#dark, #light {
+  margin-top: 5rem;
+}
+.theme-toggle {
+  margin: 2rem;
+  position: absolute;
+  right: 0;
+  top: 2rem;
+}
+/* #dark{
+  background-color: rgba(1, 0, 0, 0.90);
+} */
+#light, body {
+  background-color: rgba(365, 360, 360, 0.8);
+}
+#dark, body {
+  background-color: #242424 !important;
+}
+#dark, .theme-label {
+  color: azure;
+}
+#light, .theme-label {
+  color: #242424;
+}
